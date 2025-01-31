@@ -1,4 +1,4 @@
-name: Data Integrity Tests
+name: Run test
 
 on:
   push:

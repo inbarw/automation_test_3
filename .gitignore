@@ -16,3 +16,6 @@ env/
 
 # Local environment variables
 .env
+
+allure-results
+test_results

@@ -3,11 +3,12 @@ from typing import Dict, List
 from config.config import Config
 
 
-class TrelloPage:
+class TrelloClient:
     def __init__(self):
         self.api_key = Config.TRELLO_API_KEY
         self.token = Config.TRELLO_TOKEN
         self.board_id = Config.TRELLO_BOARD_ID
+
         self.base_url = "https://api.trello.com/1"
 
     def get_board_cards(self) -> List[Dict]:
