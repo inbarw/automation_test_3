@@ -1,0 +1,18 @@
+# OAuth and API keys
+GMAIL_TOKEN_FILE
+GMAIL_CREDENTIALS_FILE
+
+# PyCharm project files
+.idea/
+
+# Python bytecode
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Local environment variables
+.env
