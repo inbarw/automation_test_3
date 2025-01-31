@@ -1,6 +1,4 @@
-import base64
 from unittest.mock import MagicMock
-
 import allure
 
 from api_utils.trello_client import TrelloClient

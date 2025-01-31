@@ -33,11 +33,16 @@ class TestGmailTrelloSync:
         subject_bodies = self.gmail.get_emails_subject_bodies()
 
         for subject, bodies in subject_bodies.items():
-            description = self.gmail.get_bodies_as_string(bodies)
+            description = self.gmail.combine_email_bodies(bodies)
             card  = self.trello.get_card_by_title(subject)
 
+            with allure.step(f"Verify that card exist for '{subject}'"):
+                assert card, f"Can't find card for {subject} email"
+
             with allure.step(f"Verify Trello card description matches email content for '{subject}'"):
-                assert card["desc"] == description, f"Description mismatch for '{subject}'"
+                if card["desc"] != description:
+                    assert card["desc"] == description, f"Description mismatch for '{subject}'"
+
 
 
 
